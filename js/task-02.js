@@ -7,15 +7,11 @@ const ingredients = [
   'Приправы',
 ];
 
-// ---------------------------------------------------------------
-// const listContainer = document.querySelector('ul#ingredients');
+const a = document.querySelector('#ingredients');
 
-// const insertListItems = items => {
-//   const unit = document.createElement(`li`);
-//   unit.textContent = items;
-//   return unit;
-// };
-
-// const allUnits = ingredients.map(items => insertListItems(items));
-// listContainer.append(...allUnits);
-// -----------------------------------------------------------------
+ingredients.forEach(el => {
+  const c = document.createElement('li');
+  c.textContent = el;
+  a.appendChild(c);
+  console.log(c);
+});

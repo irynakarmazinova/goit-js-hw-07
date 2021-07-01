@@ -13,11 +13,22 @@ const images = [
   },
 ];
 
-const createFirstImgEl = document.createElement('img');
-createFirstImgEl.classList.add('firstImg');
+const a = document.getElementById('gallery');
+images.forEach(item => {
+  const b = document.createElement('img');
+  b.src = item.url;
+  b.alt = item.alt;
 
-const createSecondImgEl = document.createElement('img');
-createFirstImgEl.classList.add('secondImg');
+  a.appendChild(b);
+  console.log(b);
+});
 
-const createThirdImgEl = document.createElement('img');
-createFirstImgEl.classList.add('thirdImg');
+// const b = images.reduce((acc, item) => {
+//   acc = `${acc} <img alt="${item.alt}" src="${item.url}"> `;
+//   console.log(acc);
+//   return acc;
+// }, '');
+
+// // a.insertAdjacentHTML('beforeend', b);
+// a.innerHTML = b;
+// console.log({ a });
