@@ -12,3 +12,12 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const createFirstImgEl = document.createElement('img');
+createFirstImgEl.classList.add('firstImg');
+
+const createSecondImgEl = document.createElement('img');
+createFirstImgEl.classList.add('secondImg');
+
+const createThirdImgEl = document.createElement('img');
+createFirstImgEl.classList.add('thirdImg');
