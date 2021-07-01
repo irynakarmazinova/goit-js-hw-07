@@ -3,8 +3,8 @@ const b = document.getElementById('name-output');
 let c = 'незнакомец';
 
 const onChange = e => {
-  a.value || 'незнакомец';
-
+  //   c = a.target.value;
+  c = a.value || 'незнакомец';
   b.textContent = c;
   console.log(e);
 };
