@@ -10,3 +10,5 @@ const onChange = e => {
 };
 
 a.addEventListener('change', onChange);
+
+// а мы тут за один раз всю гроздь добавляем??

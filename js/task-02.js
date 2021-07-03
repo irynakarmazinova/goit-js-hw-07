@@ -15,3 +15,5 @@ ingredients.forEach(el => {
   a.appendChild(c);
   console.log(c);
 });
+
+// а мы тут за один раз всю гроздь добавляем??

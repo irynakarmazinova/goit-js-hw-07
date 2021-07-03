@@ -14,21 +14,20 @@ const images = [
 ];
 
 const a = document.getElementById('gallery');
-images.forEach(item => {
-  const b = document.createElement('img');
-  b.src = item.url;
-  b.alt = item.alt;
 
-  a.appendChild(b);
-  console.log(b);
-});
+// images.forEach(item => {
+//   const b = document.createElement('img');
+//   b.src = item.url;
+//   b.alt = item.alt;
 
-// const b = images.reduce((acc, item) => {
-//   acc = `${acc} <img alt="${item.alt}" src="${item.url}"> `;
-//   console.log(acc);
-//   return acc;
-// }, '');
+//   a.appendChild(b);
+//   console.log(b);
+// });
 
-// // a.insertAdjacentHTML('beforeend', b);
-// a.innerHTML = b;
-// console.log({ a });
+const b = images.reduce((acc, item) => {
+  acc = `${acc} <img class = "img-item" alt="${item.alt}" src="${item.url}"> `;
+  a.classList.add('img-list');
+  return acc;
+}, '');
+
+a.insertAdjacentHTML('beforeend', b);

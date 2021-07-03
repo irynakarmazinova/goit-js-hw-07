@@ -15,3 +15,5 @@ const a = document.querySelector("[data-action='decrement']");
 const b = document.querySelector("[data-action='increment']");
 a.addEventListener('click', decrement);
 b.addEventListener('click', incremet);
+
+// а мы тут за один раз всю гроздь добавляем??
