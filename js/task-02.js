@@ -24,6 +24,6 @@ ulEl.prepend(...newArr);
 // ingredients.forEach(el => {
 //   const c = document.createElement('li');
 //   c.textContent = el;
-//   a.appendChild(c);
+//   a.append(c);
 //   console.log(c);
 // });
