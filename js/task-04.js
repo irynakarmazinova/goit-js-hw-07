@@ -1,19 +1,18 @@
+const spanEl = document.getElementById('value'); //span
+const btnDecEl = document.querySelector("[data-action='decrement']");
+const btnIncEl = document.querySelector("[data-action='increment']");
 let counterValue = 0;
-
-const c = document.getElementById('value');
 
 const decrement = () => {
   counterValue -= 1;
-  c.textContent = counterValue;
+  spanEl.textContent = counterValue;
+  // counterValueRef.textContent = counterValue -= 1;
 };
 const incremet = () => {
   counterValue += 1;
-  c.textContent = counterValue;
+  spanEl.textContent = counterValue;
+  // counterValueRef.textContent = counterValue += 1;
 };
 
-const a = document.querySelector("[data-action='decrement']");
-const b = document.querySelector("[data-action='increment']");
-a.addEventListener('click', decrement);
-b.addEventListener('click', incremet);
-
-// а мы тут за один раз всю гроздь добавляем??
+btnDecEl.addEventListener('click', decrement);
+btnIncEl.addEventListener('click', incremet);

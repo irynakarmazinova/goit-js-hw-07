@@ -13,21 +13,26 @@ const images = [
   },
 ];
 
-const a = document.getElementById('gallery');
+const ulEl = document.getElementById('gallery');
+ulEl.classList.add('img-list');
+
+const createImages = images.reduce((acc, item) => {
+  return (acc = `${acc} <img class = "img-item" alt="${item.alt}" src="${item.url}"> `);
+}, '');
+
+ulEl.insertAdjacentHTML('beforeend', createImages);
+
+// а так ? так мы не за один раз добавляем всю гроздь ?
+
+// const a = document.getElementById('gallery');
+// a.classList.add('img-list');
 
 // images.forEach(item => {
 //   const b = document.createElement('img');
+//   b.classList.add('img-item');
 //   b.src = item.url;
 //   b.alt = item.alt;
 
 //   a.appendChild(b);
 //   console.log(b);
 // });
-
-const b = images.reduce((acc, item) => {
-  acc = `${acc} <img class = "img-item" alt="${item.alt}" src="${item.url}"> `;
-  a.classList.add('img-list');
-  return acc;
-}, '');
-
-a.insertAdjacentHTML('beforeend', b);

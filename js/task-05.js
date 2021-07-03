@@ -1,14 +1,16 @@
-const a = document.getElementById('name-input');
-const b = document.getElementById('name-output');
-let c = 'незнакомец';
+const inputEl = document.getElementById('name-input'); //input
+const spanEl = document.getElementById('name-output'); //span
 
-const onChange = e => {
-  //   c = a.target.value;
-  c = a.value || 'незнакомец';
-  b.textContent = c;
-  console.log(e);
+const onChange = inputName => {
+  let textInput = 'незнакомец';
+
+  textInput = inputEl.value || 'незнакомец';
+  spanEl.textContent = textInput;
+  return inputName;
+
+  // inputName.target.value === ''
+  //   ? (spanEl.textContent = 'незнакомец')
+  //   : (spanEl.textContent = inputName.target.value);
 };
 
-a.addEventListener('change', onChange);
-
-// а мы тут за один раз всю гроздь добавляем??
+inputEl.addEventListener('change', onChange);
