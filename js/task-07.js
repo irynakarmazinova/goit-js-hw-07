@@ -5,4 +5,5 @@ const onInputChange = () => {
   spanEl.style.fontSize = `${inputEl.value}px`;
 };
 
-inputEl.addEventListener('change', onInputChange);
+inputEl.addEventListener('input', onInputChange); //для текстовых полей
+// inputEl.addEventListener('change', onInputChange); //для радиобат.  и чебоксов

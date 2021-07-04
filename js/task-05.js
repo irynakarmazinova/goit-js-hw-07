@@ -1,6 +1,7 @@
 const inputEl = document.getElementById('name-input'); //input
 const spanEl = document.getElementById('name-output'); //span
 
+// onInputChange - функция обработчик события
 const onInputChange = inputName => {
   let textInput = 'незнакомец';
 
@@ -9,15 +10,13 @@ const onInputChange = inputName => {
 
   return inputName;
 
-  // inputName.target.value === ''
+  // inputEl.value === ''
   //   ? (spanEl.textContent = 'незнакомец')
   //   : (spanEl.textContent = inputName.target.value);
 };
 
-inputEl.addEventListener('change', onInputChange);
-
-// const a = inputName.currentTarget.elements;
-// console.dir(a);
-
-// // const b = a.mail.value;
-// // console.log(b);
+inputEl.addEventListener('input', onInputChange);
+// inputEl.addEventListener('change', onInputChange);
+// ------------------------------------------------------------------
+// inputEl.value === inputName.target.value
+// ------------------------------------------------------------------

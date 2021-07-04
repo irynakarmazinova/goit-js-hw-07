@@ -1,7 +1,8 @@
+//паттерн объект ссылок
 const refs = {
   spanEl: document.getElementById('value'),
-  btnDecEl: document.querySelector("[data-action='decrement']"),
-  btnIncEl: document.querySelector("[data-action='increment']"),
+  btnDecrementEl: document.querySelector("[data-action='decrement']"),
+  btnIncremetEl: document.querySelector("[data-action='increment']"),
 };
 
 let counterValue = 0;
@@ -17,5 +18,5 @@ const incremet = () => {
   // counterValueRef.textContent = counterValue += 1;
 };
 
-refs.btnDecEl.addEventListener('click', decrement);
-refs.btnIncEl.addEventListener('click', incremet);
+refs.btnDecrementEl.addEventListener('click', decrement);
+refs.btnIncremetEl.addEventListener('click', incremet);

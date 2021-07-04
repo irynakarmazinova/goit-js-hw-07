@@ -21,18 +21,37 @@ const createImages = images.reduce((acc, item) => {
 }, '');
 
 ulEl.insertAdjacentHTML('beforeend', createImages);
-
-// а так ? так мы не за один раз добавляем всю гроздь ?
-
+// -----------------------------------------------------------------------
+// второй вариант решения - создаю массив изображений с помощью map
 // const a = document.getElementById('gallery');
 // a.classList.add('img-list');
 
-// images.forEach(item => {
+// const createImages = images.map(item => {
 //   const b = document.createElement('img');
 //   b.classList.add('img-item');
 //   b.src = item.url;
 //   b.alt = item.alt;
 
-//   a.appendChild(b);
-//   console.log(b);
+//   return b;
 // });
+
+// a.append(...createImages);
+// ------------------------------------------------------------------------
+// третий вариант решения - с помощью функции
+// const a = document.getElementById('gallery');
+// a.classList.add('img-list');
+
+// const createImagesFunction = items => {
+//   return items.map(item => {
+//     const b = document.createElement('img');
+
+//     b.classList.add('img-item');
+//     b.src = item.url;
+//     b.alt = item.alt;
+
+//     return b;
+//   });
+// };
+
+// const elements = createImagesFunction(images);
+// a.append(...elements);
