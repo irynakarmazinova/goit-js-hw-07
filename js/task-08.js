@@ -5,14 +5,15 @@ const refs = {
   divBoxesEl: document.getElementById('boxes'),
 };
 
-// refs.inputEl.addEventListener('input', onInputChange);
 refs.btnRenderEl.addEventListener('click', createBoxes);
 refs.btnDestroyEl.addEventListener('click', destroyBoxes);
 
 // добавить по клику
 function createBoxes(amount) {
   let size = 30;
-  const inputValue = +refs.inputEl.value;
+  const newArr = [];
+
+  amount = +refs.inputEl.value;
 
   for (let i = 0; i < amount; i += 1) {
     // size = inputValue * 10 + 30;
@@ -22,10 +23,10 @@ function createBoxes(amount) {
     createDivEl.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
     createDivEl.style.width = `${size}px`;
     createDivEl.style.height = `${size}px`;
-    console.log(createDivEl);
-
-    refs.divBoxesEl.append(...createDivEl);
+    newArr.push(createDivEl);
   }
+
+  refs.divBoxesEl.append(...newArr);
 }
 
 // очистить по клику
@@ -37,8 +38,6 @@ function destroyBoxes() {
 function randomNumber() {
   return Math.round(Math.random() * (100 - 0) + 0);
 }
-
-// function onInputChange() {}
 // ------------------------------------------------------------------------
 // const a = document.getElementById('boxes');
 // const c = document.querySelector('[data-action="render"]');
