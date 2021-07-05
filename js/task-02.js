@@ -33,7 +33,7 @@ ulEl.append(...newArr); //мы берем массив этих элементо
 
 // ulEl.append(...ingredientsItems);
 // ------------------------------------------------------------------------
-// третий вариант решения - с помощью функции
+// третий вариант решения - с помощью функции и map
 // const ulEl = document.getElementById('ingredients');
 
 // const makeIngridientsFunction = items => {
@@ -47,6 +47,35 @@ ulEl.append(...newArr); //мы берем массив этих элементо
 
 // const elements = makeIngridientsFunction(ingredients);
 // ulEl.append(...elements);
+// ------------------------------------------------------------------------
+// четвертый вариант - с помощью функции и перебора forEach
+// const listContainer = document.querySelector('#ingredients');
+
+// const insertListItems = () => {
+//   let array = [];
+
+//   ingredients.forEach(element => {
+//     let unit = document.createElement(`li`);
+
+//     unit.textContent = element;
+//     array.push(unit);
+//   });
+//   return array;
+// };
+
+// const allUnits = insertListItems(ingredients);
+// listContainer.append(...allUnits);
+// ------------------------------------------------------------------------
+// пятый вариант - с помощью map
+// const listContainer = document.querySelector('ul#ingredients');
+
+// const insertListItems = items => {
+//   const unit = document.createElement(`li`);
+//   unit.textContent = items;
+//   return unit;
+// };
+// const allUnits = ingredients.map(items => insertListItems(items));
+// listContainer.append(...allUnits);
 // ------------------------------------------------------------------------
 // добавление лишек в дом поштучно
 // const a = document.getElementById('ingredients');

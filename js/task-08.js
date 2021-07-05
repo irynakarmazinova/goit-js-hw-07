@@ -38,6 +38,14 @@ function destroyBoxes() {
 function randomNumber() {
   return Math.round(Math.random() * (100 - 0) + 0);
 }
+
+// console.log('Получаешь введенное значение: ', refs.inputEl.value);
+// Я, создал функцию для создания дива с заданными параметрами.В этой функции создаётся массив длиной значения инпута, в массив пушится сам созданный див(бокс) с заданными параметрами.На клик по кнопке в слушателе в колбеке создал функцию в которой через append добавил дивы.
+// const boxes = createBoxes(amount);
+//   boxesWrapper.append(...boxes);
+
+// Передать введенное количество в колбек функцию при клике на кнопку "создать" можно так:
+// btnRender.addEventListener("click", event => createBoxes(amount));
 // ------------------------------------------------------------------------
 // const a = document.getElementById('boxes');
 // const c = document.querySelector('[data-action="render"]');

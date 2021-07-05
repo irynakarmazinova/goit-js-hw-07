@@ -17,7 +17,7 @@ const ulEl = document.getElementById('gallery');
 ulEl.classList.add('img-list');
 
 const createImages = images.reduce((acc, item) => {
-  return (acc = `${acc} <img class = "img-item" alt="${item.alt}" src="${item.url}"> `);
+  return `${acc} <li><img class="img-list__img" alt="${item.alt}" src="${item.url}"></li>`;
 }, '');
 
 ulEl.insertAdjacentHTML('beforeend', createImages);
@@ -36,8 +36,20 @@ ulEl.insertAdjacentHTML('beforeend', createImages);
 // });
 
 // a.append(...createImages);
+// -----------------------------------------------------------------------
+// третий вариант решения - с помощью map,join и деструктуризации
+// const containerImgEl = document.getElementById('gallery');
+// containerImgEl.classList.add('img-list');
+
+// const galleryList = images.map(image => {
+//   const { url, alt } = image;
+
+//   return `<li class ="img-list__item"><img class ="img-list__img" alt="${alt}" src="${url}"/></li>`;
+// });
+
+// containerImgEl.insertAdjacentHTML(`beforeend`, galleryList.join(''));
 // ------------------------------------------------------------------------
-// третий вариант решения - с помощью функции
+// четвертый вариант решения - с помощью функции
 // const a = document.getElementById('gallery');
 // a.classList.add('img-list');
 
