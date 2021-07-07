@@ -5,48 +5,95 @@ const refs = {
   divBoxesEl: document.getElementById('boxes'),
 };
 
-refs.btnRenderEl.addEventListener('click', createBoxes);
-refs.btnDestroyEl.addEventListener('click', destroyBoxes);
+// глобальные переменные
+let amount = 0;
+
+function createOneBoxes() {
+  refs.inputEl.value = +refs.inputEl.value + 1;
+  createBoxes();
+}
+refs.btnRenderEl.addEventListener('click', createOneBoxes);
 
 // добавить по клику
-function createBoxes(amount) {
+function createBoxes() {
   let size = 30;
   const newArr = [];
 
+  let children = refs.divBoxesEl.children;
+  const childrenLength = children.length;
+
   amount = +refs.inputEl.value;
 
-  for (let i = 0; i < amount; i += 1) {
-    // size = inputValue * 10 + 30;
+  const createNewArray = new Array(amount);
+  createNewArray.fill('');
+
+  // добавить див и каждый последующий + 10px
+  // _ - заглушка
+  // i - index
+  createNewArray.forEach((_, i) => {
     size += 10;
 
-    const createDivEl = document.createElement('div');
-    createDivEl.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
-    createDivEl.style.width = `${size}px`;
-    createDivEl.style.height = `${size}px`;
-    newArr.push(createDivEl);
+    // добавить дивы
+    if (i > childrenLength - 1) {
+      const createDivEl = document.createElement('div');
+      createDivEl.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+      createDivEl.style.width = `${size}px`;
+      createDivEl.style.height = `${size}px`;
+      newArr.push(createDivEl);
+    }
+  });
+
+  // удалить число в инпуте
+  if (amount < childrenLength) {
+    const newArray = new Array(childrenLength);
+    newArray.fill('');
+
+    newArray.forEach((_, index) => {
+      if (index > amount - 1) {
+        refs.divBoxesEl.removeChild(children[index]);
+      }
+    });
   }
 
   refs.divBoxesEl.append(...newArr);
 }
+refs.inputEl.addEventListener('change', createBoxes);
 
 // очистить по клику
 function destroyBoxes() {
   refs.divBoxesEl.innerHTML = '';
+  refs.inputEl.value = '';
 }
+refs.btnDestroyEl.addEventListener('click', destroyBoxes);
 
 // генерация рандомного числа
 function randomNumber() {
   return Math.round(Math.random() * (100 - 0) + 0);
 }
 
+// ------------------------------------------------------------------------
 // console.log('Получаешь введенное значение: ', refs.inputEl.value);
-// Я, создал функцию для создания дива с заданными параметрами.В этой функции создаётся массив длиной значения инпута, в массив пушится сам созданный див(бокс) с заданными параметрами.На клик по кнопке в слушателе в колбеке создал функцию в которой через append добавил дивы.
+// ------------------------------------------------------------------------
+// от ментора
+
+// Нужно проверять есть ли уже нарисованные кубики или нет. Если есть, то увеличиваем размер amount на их количество
+
+// refs.divBoxesEl.childNodes.length !== 0
+//   ? (amount = refs.divBoxesEl.childNodes.length + amount)
+//   : amount;
+// ------------------------------------------------------------------------
+// -Я создал функцию для создания дива с заданными параметрами.
+// -В этой функции создаётся массив длиной значения инпута.
+// -В массив пушится сам созданный див(бокс) с заданными параметрами.
+// -На клик по кнопке в слушателе в колбеке создал функцию в которой через append добавил дивы.
 // const boxes = createBoxes(amount);
 //   boxesWrapper.append(...boxes);
-
+// ------------------------------------------------------------------------
 // Передать введенное количество в колбек функцию при клике на кнопку "создать" можно так:
 // btnRender.addEventListener("click", event => createBoxes(amount));
 // ------------------------------------------------------------------------
+// более запутанный вариант
+
 // const a = document.getElementById('boxes');
 // const c = document.querySelector('[data-action="render"]');
 // const d = document.querySelector('[data-action="destroy"]');

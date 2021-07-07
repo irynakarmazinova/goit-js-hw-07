@@ -48,4 +48,4 @@ inputEl.addEventListener('blur', onInputBlur);
 //   }
 // }
 // ------------------------------------------------------------------------
-// const datasetLength = parseInt(inputRef.dataset.length);
+// const datasetLength = parseInt(inputEl.dataset.length);
