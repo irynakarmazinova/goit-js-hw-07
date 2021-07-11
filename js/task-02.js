@@ -21,7 +21,19 @@ ingredients.forEach(item => {
 
 ulEl.append(...newArr); //мы берем массив этих элементов, которые создали и распыляем  отдельными аргументами вызов аппенда-спред
 // ------------------------------------------------------------------------
-// второй вариант решения - создаю массив кнопок с помощью map
+// второй вариант решения от Дмитрия ментора - с помощью map
+// const ulEl = document.querySelector('#ingredients');
+
+// const newArr = ingredients.map(el => {
+//   const liRef = document.createElement('li');
+//   liRef.innerHTML = `<p>${el}</p>`;
+
+//   return liRef;
+// });
+
+// ulEl.append(...newArr);
+// ------------------------------------------------------------------------
+// третий вариант решения - создаю массив кнопок с помощью map
 // const ulEl = document.getElementById('ingredients');
 
 // const ingredientsItems = ingredients.map(item => {
@@ -33,7 +45,7 @@ ulEl.append(...newArr); //мы берем массив этих элементо
 
 // ulEl.append(...ingredientsItems);
 // ------------------------------------------------------------------------
-// третий вариант решения - с помощью функции и map
+// четвертый вариант решения - с помощью функции и map
 // const ulEl = document.getElementById('ingredients');
 
 // const makeIngridientsFunction = items => {
@@ -48,7 +60,7 @@ ulEl.append(...newArr); //мы берем массив этих элементо
 // const elements = makeIngridientsFunction(ingredients);
 // ulEl.append(...elements);
 // ------------------------------------------------------------------------
-// четвертый вариант - с помощью функции и перебора forEach
+// пятый вариант решения - с помощью функции и перебора forEach
 // const listContainer = document.querySelector('#ingredients');
 
 // const insertListItems = () => {
@@ -66,7 +78,7 @@ ulEl.append(...newArr); //мы берем массив этих элементо
 // const allUnits = insertListItems(ingredients);
 // listContainer.append(...allUnits);
 // ------------------------------------------------------------------------
-// пятый вариант - с помощью map
+// шестой вариант решения - с помощью map
 // const listContainer = document.querySelector('ul#ingredients');
 
 // const insertListItems = items => {

@@ -8,6 +8,7 @@ const refs = {
 // глобальные переменные
 let amount = 0;
 
+// добавить по клику
 function createOneBoxes() {
   refs.inputEl.value = +refs.inputEl.value + 1;
   createBoxes();
@@ -92,7 +93,7 @@ function randomNumber() {
 // Передать введенное количество в колбек функцию при клике на кнопку "создать" можно так:
 // btnRender.addEventListener("click", event => createBoxes(amount));
 // ------------------------------------------------------------------------
-// более запутанный вариант
+// второй вариант решения - более запутанный
 
 // const a = document.getElementById('boxes');
 // const c = document.querySelector('[data-action="render"]');
@@ -166,3 +167,40 @@ function randomNumber() {
 // const randomInteger = () => {
 //   return Math.round(-0.5 + Math.random() * 256);
 // };
+// ------------------------------------------------------------------------
+// третий вариант решения - от Дмитрия ментора
+// const [input, createBtn, destroyBtn] =
+//   document.querySelector("#controls").children;
+// console.log(input);
+// console.log(createBtn);
+// console.log(destroyBtn);
+// let size = 30;
+
+// const divListRef = document.querySelector("#boxes");
+
+// createBtn.addEventListener("click", () => createBoxes(input.value));
+// destroyBtn.addEventListener("click", destroyBoxes);
+
+// function createBoxes(amount) {
+//   const newArr = [];
+//   for (let i = 0; i < amount; i += 1) {
+//     const newDiv = document.createElement("div");
+//     newDiv.style.backgroundColor = createRandom();
+//     newDiv.style.width = size + "px";
+//     newDiv.style.height = size + "px";
+//     size += 10;
+//     newArr.push(newDiv);
+//   }
+//   divListRef.append(...newArr);
+// }
+
+// function destroyBoxes() {
+//   divListRef.innerHTML = "";
+//   size = 30;
+// }
+
+// function createRandom() {
+//   return `rgb(${(Math.random() * 255) << 0}, ${(Math.random() * 255) << 0}, ${
+//     (Math.random() * 255) << 0
+//   })`;
+// }

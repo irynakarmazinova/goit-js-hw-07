@@ -16,13 +16,32 @@ const images = [
 const ulEl = document.getElementById('gallery');
 ulEl.classList.add('img-list');
 
-const createImages = images.reduce((acc, item) => {
-  return `${acc} <li><img class="img-list__img" alt="${item.alt}" src="${item.url}"></li>`;
+const createImages = images.reduce((acc, { alt, url }) => {
+  return `${acc} <li><img class="img-list__img" alt="${alt}" src="${url}"></li>`;
 }, '');
 
 ulEl.insertAdjacentHTML('beforeend', createImages);
+// ------------------------------------------------------------------------
+// второй вариант решения - от Дмитрия ментора через map
+// const ulRef = document.querySelector('#gallery');
+//
+// ulRef.insertAdjacentHTML(
+//   'beforeend',
+//   images.map(el => `<li><img src="${el.url}" alt="${el.alt}"></li>`).join(''),
+// );
+// ------------------------------------------------------------------------
+// третий вариант решения - от Дмитрия ментора через reduce
+// const ulRef = document.querySelector('#gallery');
+
+// ulRef.insertAdjacentHTML(
+//   'beforeend',
+//   images.reduce(
+//     (acc, { alt, url }) => acc + `<li><img src="${url}" alt="${alt}"></li>`,
+//   ),
+//   '',
+// );
 // -----------------------------------------------------------------------
-// второй вариант решения - создаю массив изображений с помощью map
+// четвертый вариант решения - создаю массив изображений с помощью map
 // const a = document.getElementById('gallery');
 // a.classList.add('img-list');
 
@@ -37,7 +56,7 @@ ulEl.insertAdjacentHTML('beforeend', createImages);
 
 // a.append(...createImages);
 // -----------------------------------------------------------------------
-// третий вариант решения - с помощью map,join и деструктуризации
+// пятый вариант решения - с помощью map,join и деструктуризации
 // const containerImgEl = document.getElementById('gallery');
 // containerImgEl.classList.add('img-list');
 
@@ -49,7 +68,7 @@ ulEl.insertAdjacentHTML('beforeend', createImages);
 
 // containerImgEl.insertAdjacentHTML(`beforeend`, galleryList.join(''));
 // ------------------------------------------------------------------------
-// четвертый вариант решения - с помощью функции
+// шестой вариант решения - с помощью функции
 // const a = document.getElementById('gallery');
 // a.classList.add('img-list');
 
