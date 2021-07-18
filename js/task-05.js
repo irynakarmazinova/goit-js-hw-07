@@ -1,23 +1,23 @@
-// const refs = {
-//   inputEl: document.getElementById('name-input'), //input
-//   spanEl: document.getElementById('name-output'), //span
-// };
+const refs = {
+  inputEl: document.getElementById('name-input'), //input
+  spanEl: document.getElementById('name-output'), //span
+};
 
-// // onInputChange - функция обработчик события
-// const onInputChange = inputName => {
-//   let textInput = 'незнакомец';
+// onInputChange - функция обработчик события
+const onInputChange = inputName => {
+  let textInput = 'незнакомец';
 
-//   textInput = refs.inputEl.value || 'незнакомец';
-//   refs.spanEl.textContent = textInput;
+  textInput = refs.inputEl.value || 'незнакомец';
+  refs.spanEl.textContent = textInput;
 
-//   // inputEl.value === ''
-//   //   ? (spanEl.textContent = 'незнакомец')
-//   //   : (spanEl.textContent = inputName.target.value);
+  // inputEl.value === ''
+  //   ? (spanEl.textContent = 'незнакомец')
+  //   : (spanEl.textContent = inputName.target.value);
 
-//   return inputName;
-// };
+  return inputName;
+};
 
-// refs.inputEl.addEventListener('input', onInputChange);
+refs.inputEl.addEventListener('input', onInputChange);
 // ------------------------------------------------------------------
 // inputEl.value === inputName.target.value
 
